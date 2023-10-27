@@ -46,6 +46,10 @@ def handle_request():
 
     return [[most_likely_winning_move[0][0],most_likely_winning_move[0][1]],[most_likely_winning_move[1][0],most_likely_winning_move[1][1]]]
 
+@app.route('/',methods = ['GET'])
+def handle_get():
+    return "Hello World"
+
 
 #if __name__ == "__main__":
     
