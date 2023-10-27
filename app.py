@@ -2,8 +2,6 @@ from flask import Flask, request
 import gameclasses
 from gameclasses import state_compression
 
-from alpha_zero_loss import alpha_zero_loss
-
 import numpy as np
 
 from tensorflow import keras
