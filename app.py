@@ -4,6 +4,7 @@ from gameclasses import state_compression
 
 import numpy as np
 
+import tensorflow as tf
 from tensorflow import keras
 
 def alpha_zero_loss(y_true, y_pred):
