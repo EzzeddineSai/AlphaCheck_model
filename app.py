@@ -55,6 +55,6 @@ def handle_get():
     
 #model_iteration = sys.argv[1]
 #model_directory = 'models\\iter'+model_iteration+'.h5'
-model_directory = 'models\\iter.h5'
+model_directory = 'iter.h5'
 reconstructed_model = keras.models.load_model(model_directory,custom_objects={ 'alpha_zero_loss': alpha_zero_loss })
 #app.run(host="0.0.0.0", port=1000, threaded=True)
