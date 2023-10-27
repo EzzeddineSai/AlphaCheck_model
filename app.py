@@ -47,10 +47,10 @@ def handle_request():
     return [[most_likely_winning_move[0][0],most_likely_winning_move[0][1]],[most_likely_winning_move[1][0],most_likely_winning_move[1][1]]]
 
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
     
-    #model_iteration = sys.argv[1]
-    #model_directory = 'models\\iter'+model_iteration+'.h5'
-    model_directory = 'models\\iter.h5'
-    reconstructed_model = keras.models.load_model(model_directory,custom_objects={ 'alpha_zero_loss': alpha_zero_loss })
-    app.run(host="0.0.0.0", port=1000, threaded=True)
+#model_iteration = sys.argv[1]
+#model_directory = 'models\\iter'+model_iteration+'.h5'
+model_directory = 'models\\iter.h5'
+reconstructed_model = keras.models.load_model(model_directory,custom_objects={ 'alpha_zero_loss': alpha_zero_loss })
+#app.run(host="0.0.0.0", port=1000, threaded=True)
