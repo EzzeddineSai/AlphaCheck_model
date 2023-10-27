@@ -50,11 +50,15 @@ def handle_request():
 def handle_get():
     return "Hello World"
 
+def alpha_zero_loss(y_true, y_pred):
+    squared_difference = (y_true[:,256] - y_pred[:,256])**2
+    cce = tf.keras.losses.CategoricalCrossentropy()
+    cce_loss = cce(y_true[:,:256],y_pred[:,:256])
+    return squared_difference+cce_loss
 
-#if __name__ == "__main__":
-    
-#model_iteration = sys.argv[1]
-#model_directory = 'models\\iter'+model_iteration+'.h5'
-model_directory = 'iter.h5'
-reconstructed_model = keras.models.load_model(model_directory,custom_objects={ 'alpha_zero_loss': alpha_zero_loss })
-#app.run(host="0.0.0.0", port=1000, threaded=True)
+if __name__ == "__main__":
+    #model_iteration = sys.argv[1]
+    #model_directory = 'models\\iter'+model_iteration+'.h5'
+    model_directory = 'iter.h5'
+    reconstructed_model = keras.models.load_model(model_directory,custom_objects={ 'alpha_zero_loss': alpha_zero_loss })
+    #app.run(host="0.0.0.0", port=1000, threaded=True)
